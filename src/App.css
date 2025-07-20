@@ -6,6 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #8c51d3;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -34,5 +41,78 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url(/public/fonts/IBM/IBMPlexSansArabic-Regular.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "IBM";
+  src: url(/public/fonts/IBM/IBMPlexSansArabic-Light.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: IBM;
+  src: url(/public/fonts/IBM/IBMPlexSansArabic-Medium.ttf);
+  font-weight: 600;
+}
+
+.weather-card {
+  background: linear-gradient(to bottom, #c084fc, #a855f7);
+  color: white;
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+.city {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.temp {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.weather-icon {
+  font-size: 80px;
+  margin: 20px 0;
+  animation: floatCloud 4s ease-in-out infinite;
+}
+
+.lang-toggle {
+  margin-top: 20px !important;
+  padding: 5px 10px !important;
+  font-size: 16px !important;
+
+  border: none !important;
+  border-radius: 30px !important;
+  background: linear-gradient(to right, #a855f7, #9333ea) !important;
+  color: white !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.lang-toggle:hover {
+  background: linear-gradient(to right, #9333ea, #7e22ce) !important;
+  transform: scale(1.05) !important;
+}
+
+@keyframes floatCloud {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
   }
 }
